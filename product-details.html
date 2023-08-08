@@ -25,12 +25,12 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
-    <title>Homepage | China Food Website</title>
+    <title>糕餅介紹</title>
     
   </head>
   <body>
 
-   <div class="home-wrapper">
+   <div class="product-details-wrapper">
       <div class="main-container">
          <header>
           <div class="container">
@@ -58,46 +58,132 @@
             </div>
           </div>
          </header>
-         <div class="hero owl-carousel owl-theme" id="slider">
-            <img src="/images/hero1.jpg" class="img-fluid" alt="">
-            <img src="/images/hero2.jpg" class="img-fluid" alt="">
-            <img src="/images/hero3.jpg" class="img-fluid" alt="">
-            <img src="/images/hero4.jpg" class="img-fluid" alt="">
+         <div class="hero">
+            <img src="/images/product-hero.jpg" class="img-fluid" alt="">
          </div>
-         <section class="about-wrapper">
-          <div class="container">
-            <div class="heading">
-              <h3>緣起長益</h3>
-              <h6>ABOUT CHANGYI</h6>
-            </div>
-            <div class="row">
-              <div class="col col1 col-md-6">
-                <div class="wrapper">
-                  <img src="/images/about1.jpg" class="img-fluid" alt="">
-                  <p>扎扎實實地純手工製作，傳承古法製作食材講究，用料實在，傳統好滋味狀元囍餅、魯肉豆沙均採用當日清晨現宰溫體豬肉，以本店祖傳灶爐，用廢木材、紙箱等為燃料，配上特殊佐料，以純正綠豆沙來包裹，再以現代科技加以真空包裝，為本店招牌餅。</p>
-                </div>
-              </div>
-              <div class="col col2 col-md-6">
-                <div class="wrapper">
-                  <h3>很久很久以前...雲林北港有家老店
-                    裡面賣著傳說中好吃得不得了的餅</h3>
-                  <p>長益食品創立於1927年，傳承創始人施能清對於產品及原料的堅持，遵循古法手工製作每一個餅，傳承至第四代仍保有大灶炒肉的傳統，也讓這個好滋味在北港飄香一世紀，更是許多在地長者從小到大到好滋味。
-                    民國84年推出全台首創麻糬餅風靡全台。</p>
-                  <img src="/images/about2.jpg" class="img-fluid" alt="">
-                </div>  
-              </div>
-              <a href="/about.html" class="btn">瞭解更多 ></a>
-            </div>
-          </div>
-            
-         </section>
          <section class="popular-products">
           <div class="container">
             <div class="heading">
-              <h3>熱門產品</h3>
-              <h6>POPULAR PRODUCTS</h6>
+              <h3>糕餅介紹</h3>
+              <!-- <h6>POPULAR PRODUCTS</h6> -->
             </div>
-            <div class="row">
+            <div class="row row-links">
+                <div class="col col md-12">
+                    <div class="wrapper">
+                      <a href="/traditional-wedding-cakes.html">囍餅系列</a>
+                      <a href="/snacks.html">點心系列</a>
+                      <a href="/boxes.html">禮盒系列</a>
+                      <a href="/moon-festival.html">中秋系列</a>
+                      <a href="/products.html">全部商品</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row product-details">
+                <div class="col col1 col-md-12 col-lg-6">
+                    <div class="wrapper">
+                      <div class="image-library">
+                        <div class="main-image">
+                          <div class="nav-arrow left-arrow">&lt;</div>
+                          <img id="main-image" src="/images/product-images/1/0.jpg" alt="Main Image">
+                          <div class="nav-arrow right-arrow">&gt;</div>
+                        </div>
+                        <div class="thumbnails">
+                          <img src="/images/product-images/1/0.jpg" alt="Image 1" data-index="0">
+                          <img src="/images/product-images/1/1.jpg" alt="Image 2" data-index="1">
+                          <img src="/images/product-images/1/2.jpg" alt="Image 3" data-index="2">
+                          <!-- Add more thumbnail images as needed -->
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col col2 col-md-12 col-lg-6">
+                    <div class="wrapper">
+                      <h2>咖哩囍餅</h2>
+                      <div class="info">
+                        <p>綠豆沙、豬肉、麵粉、豬油、水、麥芽、</p>
+                        <p>糖、雞蛋、蝦米、醬油、蔥酥、咖哩粉</p>
+                        <p>一斤 NT$160</p>
+                        <p>一斤半 NT$240</p>
+                        <p>二斤 NT$320</p>
+                        <p>三斤 NT$480</p>
+                        <!-- <p>&nbsp;</p> -->
+                      </div>
+                      
+                      <div class="food-items">
+                        <label for="food-items">品項</label>
+                        <select name="" id="food-items">
+                          <option value="" selected>請選取一個選項</option>
+                          <option value="">一斤半</option>
+                          <option value="">二斤</option>
+                          <option value="">三斤</option>
+                        </select>
+                      </div>
+
+                      <div class="price">
+                        <p>NT$240</p>
+                      </div>
+
+                      <div class="customize">
+                        <label for="customize">客製化</label>
+                        <input type="text" id="customize">
+                        <p>若您有客制化需求，請註明。</p>
+                      </div>
+
+                      <div class="add-to-cart">
+                        <div class="count">
+                          <span>-</span>
+                          <span>1</span>
+                          <span>+</span>
+                        </div>
+                        <button class="btn">加入購物車</button>
+                      </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row3">
+              <div class="col col-md-12">
+                <div class="wrapper">
+                  <pre>
+                    【賞味期限】
+冷藏7-10天、冷凍14天
+
+收到產品後請依產品保存建議存放，禮餅類產品請儘速發送予賓客並密封冷藏保存。
+（食用時建議退冰後加熱食用風味更佳）
+
+【訂購流程】
+
+
+ 
+
+【訂購方式】
+確定到貨日期後，於到貨日前10-14天可於購物車完成購物清單後，
+
+傳真至05-7832346我們將會與您聯繫，或來電05-7832346訂購，可選擇每週二至五到貨。
+（國定假日及部分地區除外）
+
+其他訂購相關資訊請見  囍餅Q&A
+
+【配送方式】
+確認您的購物清單與配送時間後，我們將會於製作完成後交付宅配公司，並於1-2日內配送目的地。
+（可使用貨到付款或匯款）
+單一地址滿4000元免運費免貨到付款手續費。
+未滿者加運費180元，如需貨到付款者再加收手續費30元。
+＊如氣候因素影響，可能應宅配公司調整配送日期。
+＊外島地區及部分地區配送時程有異時，我們將會與您聯繫！
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row4">
+              <div class="heading">
+                <h3>熱門產品推薦</h3>
+              </div>
               <div class="col col-md-12">
                 <div class="main">
                   <div class="product-wrapper">
@@ -170,81 +256,14 @@
                       <div class="content">
                         <h5>狀元囍餅</h5>
                         <h4>NT$160 – NT$480</h4>
-                        <button class="btn">進入選擇品項</button>
+                        <!-- <button class="btn">進入選擇品項</button> -->
                       </div>
                     </div>
   
                   </div>
-                  <a href="/products.html" class="btn more-btn">更多商品 ></a>
+                  <!-- <button class="btn more-btn">更多商品 ></button> -->
                 </div>
               </div>
-            </div>
-          </div>
-         </section>
-         <section class="banner">
-          <img src="/images/banner.jpg" class="img-fluid" alt="">
-         </section>
-         <section class="gift-boxes">
-          <div class="container">
-            <div class="heading">
-              <h3>熱門產品</h3>
-              <h6>POPULAR PRODUCTS</h6>
-            </div>
-            <div class="row">
-              <div class="col col-md-12">
-                <div class="main">
-                  <div class="product-wrapper">
-    
-                    <div class="product">
-                      <img src="/images/gift1.jpg" class="img-fluid" alt="">
-                      <div class="content">
-                        <h5>雙層A+B禮盒</h5>
-                        <h4>NT$580</h4>
-                        <button class="btn">進入選擇品項</button>
-                      </div>
-                    </div>
-
-                    <div class="product">
-                      <img src="/images/gift2.png" class="img-fluid" alt="">
-                      <div class="content">
-                        <h5>雙層雙B禮盒</h5>
-                        <h4>NT$630</h4>
-                        <button class="btn">進入選擇品項</button>
-                      </div>
-                    </div>
-
-                    <div class="product">
-                      <img src="/images/gift3.jpg" class="img-fluid" alt="">
-                      <div class="content">
-                        <h5>四斤六色禮餅（方型）</h5>
-                        <h4>NT$700</h4>
-                        <button class="btn">進入選擇品項</button>
-                      </div>
-                    </div>
-  
-                    <div class="product">
-                      <img src="/images/gift4.jpg" class="img-fluid" alt="">
-                      <div class="content">
-                        <h5>三斤六色禮餅（方形盒子）</h5>
-                        <h4>NT$550</h4>
-                        <button class="btn">進入選擇品項</button>
-                      </div>
-                    </div>
-  
-                  </div>
-                  <a href="/products.html" class="btn more-btn">更多商品 ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-         </section>
-         <section class="order-store-info">
-          <div class="wrapper">
-            <div class="left">
-              <h4><a href="/faq.html">訂購須知</a></h4>
-            </div>
-            <div class="right">
-              <h4><a href="/location.html">門市資訊</a></h4>
             </div>
           </div>
          </section>
@@ -315,67 +334,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    <script>
-      $(document).ready(function(){
-        $('#slider').owlCarousel({
-          loop:true,
-          margin:0,
-         //  nav:true,
-          center: true,
-          stagePadding: 0,
-          dots:true,
-          autoplay:true,
-          autoplayTimeout:5000,
-          // navText: ["<i class='ri-arrow-left-s-line'></i>", "<i class='ri-arrow-right-s-line'></i>"],
-          smartSpeed: 1000,
-          autoplayHoverPause:false,
-          responsiveClass:true,
-          responsive:{
-              0:{
-                  items:1,
-                  stagePadding: 0,
-                  dots: false,
-                  nav: true
-
-              },
-              575:{
-                  items:1,
-                  stagePadding: 0,
-
-              },
-              768:{
-                  items:1,
-                  stagePadding: 0,
-
-              },
-              992:{
-                  items:1,
-                  stagePadding: 0,
-
-              },
-
-              1200:{
-                  items:1,
-                  stagePadding: 0,
-
-              },
-
-              1400:{
-                  items:1,
-                  stagePadding: 0,
-
-              }
-          }
-        })
-      });
-    </script>
-
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
       AOS.init();
     </script>
+
+
+<!-- <script>
+    let imageBox1 = document.getElementById("imageBox1");
+
+    function galleryFunction1(smallImg) {
+      imageBox1.src = smallImg.src;
+    }
+  </script> -->
+
+  <script>
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+const mainImage = document.getElementById('main-image');
+
+let index=0
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    index = thumbnail.getAttribute('data-index');
+    const imagePath = `/images/product-images/1/${index}.jpg`; // Replace with your image path logic
+    mainImage.src = imagePath;
+  });
+});
+
+
+/* ... Previous JavaScript ... */
+
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+let currentIndex = index;
+
+leftArrow.addEventListener('click', () => navigateImage(-1));
+rightArrow.addEventListener('click', () => navigateImage(1));
+
+function navigateImage(offset) {
+  currentIndex = (currentIndex + offset + thumbnails.length) % thumbnails.length;
+  const imagePath = `/images/product-images/1/${currentIndex}.jpg`; // Replace with your image path logic
+  mainImage.src = imagePath;
+}
+  </script>
+
 
     <script>
       function toggleMenu() {
