@@ -32,10 +32,11 @@
 
    <div class="faq-wrapper">
       <div class="main-container">
-         <header>
+        <header>
           <div class="container">
             <div class="row">
               <div class="col col-md-12">
+                <i class="ri-menu-line" id="hamburger"></i>
                 <a href="/index.html"><img src="/images/logo.png" alt=""></a>
                 <nav class="nav">
                   <ul>
@@ -80,47 +81,214 @@
                     <div class="row row1">
                         <div class="col col-md-12">
                             <div class="wrapper">
-                                <button class="btn">門市相關</button>
-                                <button class="btn">訂購問題</button>
-                                <button class="btn">糕餅相關</button>
+                                <button class="button btn" onclick="showData(1)">門市相關</button>
+                                <button class="button btn" onclick="showData(2)">訂購問題</button>
+                                <button class="button btn" onclick="showData(3)">糕餅相關</button>
                             </div>
                         </div>
                     </div>
                     <div class="row row2">
                         <div class="col col-md-12">
                             <div class="wrapper">
-                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                              <div class="data-container">
+                                <div id="data1" class="data">
+                                  <div class="accordion accordion-flush" id="accordionFlushExample">
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingOne">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                          Accordion Item #1
+                                          Q1：門市營業時間？
                                         </button>
                                       </h2>
                                       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                        <div class="accordion-body">A：營業時間為早上八點到晚上九點，例假日無休息。</div>
                                       </div>
                                     </div>
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingTwo">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                          Accordion Item #2
+                                          Q2：門市有提供停車場嗎？
                                         </button>
                                       </h2>
                                       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                        <div class="accordion-body">A：本店備有停車場。</div>
                                       </div>
                                     </div>
                                     <div class="accordion-item">
                                       <h2 class="accordion-header" id="flush-headingThree">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                          Accordion Item #3
+                                          Q3：有問題想詢問？
                                         </button>
                                       </h2>
                                       <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                        <div class="accordion-body">A：各種婚禮大小事皆歡迎您來電05-7832346詢問。</div>
                                       </div>
                                     </div>
                                   </div>
+                                </div>
+                                <div id="data2" class="data">
+                                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                          Q1：訂購商品，需多久前下訂？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：請於需求日10個工作天（含六日）前預訂</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                          Q2：請問商品運費如何計算呢？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：（一）單一地址滿4000元免運費免貨到付款手續費。
+                                          未滿者加運費180元，如需貨到付款者再加收手續費30元。
+                                    
+                                    （二）離島費用另計，需來電至門市詢問謝謝。</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                          Q3：請問訂單成立後可否修改訂單內容？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：可於上班時間來電修改，唯到（取）貨前5天（不含到貨日）不受理修改訂單內容，敬請見諒！</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                          Q4：訂購達多少金額可享折扣？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：目前本公司產品恕不折扣，敬請見諒！</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                          Q5：請問目前有提供哪些訂購方式？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：目前有以下的方式可訂購：
+
+                                          （一）電話訂購
+                                          
+                                          電話：05-7832346/05-7837886
+                                          
+                                          （二）傳真訂購
+                                          
+                                          傳真：05-7827346，可於本網站上下單，並留訂購人資料及欲訂購之商品/數量確認無誤，影印後再傳真至05-7827346，本店將盡速為您服務。</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingSix">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                          Q6：請問如何付款呢？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：可選擇
+
+                                          （一）貨到付款
+                                          
+                                          （二）到貨前匯款/轉帳</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingSeven">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                          Q7：收到商品時，發現與訂購數量不符或商品有誤該如何處理？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：當您收到貨物時，請儘速檢查商品，若對於訂購品項與數量有誤等任何疑問時，請維持商品完整，保留原包裝並請致電至門市，將會有專人為您服務。</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingEight">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                                          Q8：可以指定假日到貨嗎？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：（一）依宅配公司政策，週日及國定假日/連續假期無法提供配送。
+
+                                          （二）週六或特定節日（前）貨運物流量較大，可能會發生延遲到貨狀況產生，亦無法指定到貨日，但因應宅配政策不同有所差異，請來電05-7832346洽詢。</div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingNine">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                                          Q9：有問題想詢問？
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">A：各種婚禮大小事皆歡迎您來電05-7832346詢問。</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="data3" class="data"><div class="accordion accordion-flush" id="accordionFlushExample">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Q1：喜餅試吃需預約嗎？或可以宅配嗎？
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">A：可以直接至門市試吃喜餅無需預約，如不便前往門市試吃也可訂購禮盒宅配試吃。</div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Q2：請問收到商品如何保存？
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">A：商品皆為新鮮製作，收到商品「未拆封」冷藏可於一週，冷凍可於一個月，需食用退冰於常溫即可，若烘烤過風味更佳！</div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Q3：素食者可以食用嗎？
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">A：茹素者，請在下單時告知服務人員，訂購之品項需特製為素食品。</div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFour">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Q4：我想自行調整產品中的配餡比例，是否可為我客製產品？
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">A：目前皆有提供客製化產品的訂購，在不影響產品口味可為您所訂購品項客製加料。 ＊客製化品項數量需大於12個。</div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFive">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                        Q5：有問題想詢問？
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">A：各種婚禮大小事皆歡迎您來電05-7832346詢問。</div>
+                                    </div>
+                                  </div>
+                                </div></div>
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -199,6 +367,32 @@
     <script>
       AOS.init();
     </script>
+
+
+  <script>
+    function showData(buttonNumber) {
+      // Hide all data elements
+      var dataElements = document.querySelectorAll('.data');
+      dataElements.forEach(function(element) {
+        element.classList.remove('div-active');
+      });
+
+      // Show the selected data element
+      var selectedData = document.getElementById('data' + buttonNumber);
+      selectedData.classList.add('div-active');
+
+      // Remove active class from all buttons
+      var buttons = document.querySelectorAll('.button');
+      buttons.forEach(function(button) {
+        button.classList.remove('active');
+      });
+
+      // Add active class to the clicked button
+      var clickedButton = document.querySelector('.button:nth-child(' + buttonNumber + ')');
+      clickedButton.classList.add('active');
+    }
+  </script>
+
 
     <script>
       function toggleMenu() {
