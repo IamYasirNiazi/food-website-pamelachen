@@ -36,9 +36,13 @@
           <div class="container">
             <div class="row">
               <div class="col col-md-12">
-                <i class="ri-menu-line" id="hamburger"></i>
+                <i class="ri-menu-line" id="hamburger" onclick="toggleMenu()"></i>
                 <a href="/index.html"><img src="/images/logo.png" alt=""></a>
-                <nav class="nav">
+                <nav class="nav" id="navigation">
+                  <div class="search">
+                    <input type="text" placeholder="產品搜尋">
+                    <i class="ri-search-line"></i>
+                  </div>
                   <ul>
                       <li><a href="/about.html">品牌故事</a></li>
                       <li><a href="/products.html">糕餅介紹</a></li>
@@ -51,8 +55,170 @@
                       <input type="text" placeholder="產品搜尋">
                       <i class="ri-search-line"></i>
                   </div>
-                  <div class="icon">
+                  <div class="icon" id="cart-icon" onclick="shopNow()">
                       <i class="ri-shopping-cart-2-line"></i>
+                      <span>0</span>
+                  </div>
+                  <!-- <div class="cart-wrapper" id="show-cart">
+                    <div class="header">
+                      <span class="d-flex align-items-center">購物車 &nbsp;<span class="count">50</span></span>
+                      <i class="ri-close-line close" id="close-btn"  onclick="shopNow()"></i>
+                    </div>
+                    <div class="main">
+                      <i class="ri-shopping-cart-line icon"></i>
+                      <h6 class="heading">購物車中沒有商品</h6>
+                      <a class="btn" href="/checkout.html">開始購物</a>
+                    </div>
+                  </div> -->
+                  <div class="cart-wrapper1" id="show-cart1">
+                    <div class="header">
+                      <span class="d-flex align-items-center">購物車 &nbsp;<span class="count">50</span></span>
+                      <i class="ri-close-line close" id="close-btn1"  onclick="shopNow()"></i>
+                    </div>
+                    <div class="add-to-cart-main">
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <div class="content">
+                          <div class="image">
+                            <img src="/images/about1.jpg" class="img-fluid" alt="">
+                          </div>
+                          <div class="text">
+                            <h6>狀元囍餅 - 一斤</h6>
+                            <div>
+                              <span class="del"><i class="ri-subtract-line"></i></span>
+                              <span>10</span>
+                              <span class="add"><i class="ri-add-line"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="price-main">
+                          <span><i class="ri-close-line"></i></span>
+                          <span class="price">NT$160</span>
+                        </div>
+                      </div>
+
+                    
+                    </div>
+                    <div class="footer">
+                      <div>
+                        <h6>小計:</h6>
+                        <span>NT$3,120</span>
+                      </div>
+                      <a href="/checkout.html" class="btn">結帳</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -110,7 +276,7 @@
                         <!-- <p>&nbsp;</p> -->
                       </div>
                       
-                      <div class="food-items">
+                      <div class="food-items d-flex flex-column align-items-start">
                         <label for="food-items">品項</label>
                         <select name="" id="food-items">
                           <option value="" selected>請選取一個選項</option>
@@ -120,7 +286,7 @@
                         </select>
                       </div>
 
-                      <div class="price">
+                      <div class="price fw-bold">
                         <p>NT$240</p>
                       </div>
 
@@ -130,7 +296,7 @@
                         <p>若您有客制化需求，請註明。</p>
                       </div>
 
-                      <div class="add-to-cart d-flex flex-column gap-3 align-items-start">
+                      <div class="add-to-cart align-items-start">
                         <div class="count">
                           <span>-</span>
                           <span>1</span>
@@ -147,8 +313,7 @@
             <div class="row3">
               <div class="col col-md-12">
                 <div class="wrapper">
-                  <pre>
-                    【賞味期限】
+                  <pre>【賞味期限】
 冷藏7-10天、冷凍14天
 
 收到產品後請依產品保存建議存放，禮餅類產品請儘速發送予賓客並密封冷藏保存。
@@ -156,8 +321,8 @@
 
 【訂購流程】
 
+<img src="/images/ship-info.png" class="img-fluid" alt="">
 
- 
 
 【訂購方式】
 確定到貨日期後，於到貨日前10-14天可於購物車完成購物清單後，
@@ -381,28 +546,72 @@ function navigateImage(offset) {
   </script>
 
 
-    <script>
-      function toggleMenu() {
-        // const hamburger = document.getElementById('hamburger')
-        const nav = document.getElementById("navigation");
-        nav.classList.toggle("toggle-nav");
-      }
+<script>
+  function toggleMenu() {
+    // const hamburger = document.getElementById('hamburger')
+    const nav = document.getElementById("navigation");
+    nav.classList.toggle("toggle-nav");
+  }
 
-      document.addEventListener("click", function (event) {
-        const hamburger = document.getElementById("hamburger");
+  document.addEventListener("click", function (event) {
+    const hamburger = document.getElementById("hamburger");
 
-        if (!hamburger.contains(event.target)) {
-          const nav = document.getElementById("navigation");
-          nav.classList.remove("toggle-nav");
-        }
-      });
-
+    if (!hamburger.contains(event.target)) {
       const nav = document.getElementById("navigation");
+      nav.classList.remove("toggle-nav");
+    }
+  });
 
-      nav.addEventListener("click", function (event) {
-        event.stopPropagation();
-      });
-    </script>
+  const nav = document.getElementById("navigation");
+
+  nav.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+</script>
+
+<script>
+function shopNow() {
+const cart = document.getElementById("show-cart");
+ cart.classList.toggle("cart");
+}
+
+document.addEventListener("click", function (event) {
+const close_btn = document.getElementById("close-btn");
+const cart_btn = document.getElementById("cart-icon");
+
+if (!close_btn.contains(event.target) && !cart_btn.contains(event.target)) {
+  const cartClose = document.getElementById("show-cart");
+  cartClose.classList.remove("cart");
+}
+});
+
+const show_cart = document.getElementById("show-cart");
+show_cart.addEventListener("click", function (event) {
+event.stopPropagation();
+});
+</script>
+
+<script>
+function shopNow() {
+const cart = document.getElementById("show-cart1");
+ cart.classList.toggle("cart");
+}
+
+document.addEventListener("click", function (event) {
+const close_btn = document.getElementById("close-btn1");
+const cart_btn = document.getElementById("cart-icon");
+
+if (!close_btn.contains(event.target) && !cart_btn.contains(event.target)) {
+  const cartClose = document.getElementById("show-cart1");
+  cartClose.classList.remove("cart");
+}
+});
+
+const show_cart1 = document.getElementById("show-cart1");
+show_cart1.addEventListener("click", function (event) {
+event.stopPropagation();
+});
+</script>
 
 
   </body>

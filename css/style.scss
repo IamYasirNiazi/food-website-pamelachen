@@ -31,7 +31,68 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     // background: theme-color("site-bg");
-    color: theme-color("site-color");
+    // color: theme-color("site-color");
+}
+
+@media screen and (min-height: 630px) and (orientation: portrait) {
+    body{
+        margin-bottom: 10rem;
+    }
+}
+@media screen and (min-width:1163px) and (max-width:1279px) {
+    body{
+        zoom: 1;
+        // background: #022b3a;
+    }
+}
+@media screen and (min-width:1280px) and (max-width:1399px) {
+    body{
+        zoom: 1;
+        // background: #022b3a;
+    }
+}
+@media screen and (min-width:1400px) and (max-width:1599px) {
+    body{
+        zoom: .96;
+        // background: #022b3a;
+    }
+}
+@media screen and (min-width:1600px) and (max-width:1705px) {
+    body{
+        zoom: 1.07;
+        // background: #022b3a;
+    }
+}
+@media screen and (min-width:1706px) and (max-width:1919px) {
+    body{
+        zoom: 1.14;
+        // background: #022b3a;
+    }
+}
+@media screen and (min-width:1920px) and (max-width:2500px) {
+    body{
+        zoom: 1.28;
+    }
+}
+@media screen and (min-width:2501px) and (max-width: 2700px){
+    body{
+        zoom: 1.7;
+    }
+}
+@media screen and (min-width:2701px) and (max-width: 4500px){
+    body{
+        zoom: 2.55;
+    }
+}
+@media screen and (min-width:4501px) and (max-width:5200px){
+    body{
+        zoom: 3.4;
+    }
+}
+@media screen and (min-width:5201px) and (max-height:660px){
+    body{
+        zoom: 4.4;
+    }
 }
 
 code {
@@ -51,6 +112,59 @@ li {
             font-weight: 500;
         }
     }
+}
+
+.accordion-item .accordion-button:not(.collapsed) {
+    background-color: rgb(155, 0, 0) !important;
+    color: #fff;
+}
+
+.accordion-item .accordion-button {
+    background-color: rgb(155, 0, 0) !important;
+    color: #fff;
+    font-size: .85rem;
+
+    @media (max-width:575px){
+        font-size: .85rem;
+    }
+
+    @media (min-width:576px) and (max-width:767px){
+        font-size: .95rem;
+    }
+
+    @media (min-width:768px){
+        font-size: 1rem;
+    }
+    
+}
+
+.accordion-item .accordion-body{
+    font-size: .85rem;
+
+    @media (max-width:575px){
+        font-size: .85rem;
+        padding: 1.5rem 1rem;  
+    }
+
+    @media (min-width:576px) and (max-width:767px){
+        font-size: .95rem;
+        padding: 1.5rem 1.3rem;  
+    }
+
+    @media (min-width:768px){
+        font-size: 1rem;
+        padding: 1.5rem 1.3rem;  
+
+    }
+}
+
+.accordion-button::after {
+    background-image: url(/images/arrow-down.png) !important;
+}
+
+.accordion-item:not(.accordion-collapsed) .accordion-button {
+    border: none;
+    box-shadow: none;
 }
 
 .owl-dot{
@@ -90,7 +204,6 @@ a {
 .div-active{
     display: block !important;
 }
-
 
 .product-active-links{
     // padding: 10px 0;
@@ -134,6 +247,60 @@ button{
 }
 
 
+.toggle-nav {
+    position: absolute;
+    top: -2rem;
+    left: 0rem !important;
+    z-index: 30;
+    display: flex !important;
+    flex-direction: column !important;
+    // align-items: flex-start !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+    min-height: 100vh !important;
+    height: 100% !important;
+    // background-color: theme-color(site-bg);
+    background: #fff;
+    padding: 4rem 1rem;
+    padding-top: 7rem;
+    // margin-left: -1rem;
+    // padding-bottom: 0rem !important;
+    // border-bottom-left-radius: .6rem;
+    width: 60% !important;
+
+    @media (min-width: 430px) and (max-width: 575px){
+        width: 45% !important;   
+    }
+
+    @media (min-width: 576px) and (max-width: 767px){
+        width: 40% !important;   
+    }
+
+    .search {
+        display: flex !important;
+        border-radius: .1rem !important;
+        // font-size: .85rem !important;
+
+        input{
+            padding: .4rem .4rem !important;
+            font-size: .85rem !important;
+
+            &::placeholder{
+                font-size: .85rem !important;
+            }
+        }
+
+        i{
+            font-size: 1.1rem !important;
+        }
+    }
+}
+
+
+.cart {
+    display: flex !important;
+    flex-direction: column !important;
+}
 
 
 
@@ -148,24 +315,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -208,11 +379,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -282,12 +490,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -597,7 +1076,7 @@ button{
                                             }
                                         }
     
-                                        button{
+                                        a{
     
                                         }
                                     }
@@ -755,7 +1234,7 @@ button{
                                             }
                                         }
     
-                                        button{
+                                        a{
     
                                         }
                                     }
@@ -943,24 +1422,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -1003,11 +1486,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -1077,12 +1597,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -1524,24 +2315,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -1584,11 +2379,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -1658,12 +2490,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -1920,24 +3023,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -1980,11 +3087,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -2054,12 +3198,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -2097,12 +3512,44 @@ button{
 
                             h2{
                                 font-weight: 600;
+                                text-align: center;
+
+                                @media (max-width: 575px){
+                                    font-size: 1.7rem;
+                                    letter-spacing: 5px;  
+                                }
+
+                                @media (min-width: 576px) and (max-width: 767px){
+                                    font-size: 2rem;
+                                    letter-spacing: 8px;  
+                                }
+
+                                @media (min-width: 768px){
+                                    font-size: 2.2rem;
+                                    letter-spacing: 10px;  
+                                }
                             }
 
                             p{
                                 color: #984640;
                                 padding: 0;
                                 margin: 0;
+                                text-align: center;
+
+                                @media (max-width: 575px){
+                                    font-size: 1.1rem;
+                                    // letter-spacing: 5px;  
+                                }
+
+                                @media (min-width: 576px) and (max-width: 767px){
+                                    font-size: 1.2rem;
+                                    // letter-spacing: 8px;  
+                                }
+
+                                @media (min-width: 768px){
+                                    font-size: 1.3rem;
+                                    // letter-spacing: 10px;  
+                                }
                             }
                         }
 
@@ -2220,24 +3667,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -2280,11 +3731,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -2354,12 +3842,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -2565,24 +4324,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -2625,11 +4388,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -2699,12 +4499,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -2715,6 +4786,7 @@ button{
         }
 
         .heading{
+            margin-top: 2rem;
 
             .container{
 
@@ -2729,7 +4801,7 @@ button{
                             gap: 1rem;
 
                             h2{
-                                font-weight: 600;
+                                font-weight: 500;
                             }
 
                             p{
@@ -2745,30 +4817,43 @@ button{
         }
 
         .checkout{
+            margin-top: 1.5rem;
             
             .main-wrapper{
 
                 .container{
 
                     .row1{
+                        display: flex;
+                        align-items: flex-start;
+
+                        @media (max-width: 767px){
+                            flex-direction: column;
+                            gap: 1rem;
+                        }
 
                         .col1{
 
                             .wrapper{
 
                                 h2{
-
+                                    text-align: center;
                                 }
 
                                 .table{
 
                                     tr{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        border-bottom: 1px solid #2222227e;
+                                        // align-items: center;
 
                                         th{
-
+                                            border: none;
                                         }
 
                                         td{
+                                            border: none;
 
                                             .product-quantity{
 
@@ -2793,11 +4878,11 @@ button{
                         }
 
                         .col2{
-
+                            
                             .wrapper{
                                 
                                 h2{
-
+                                    text-align: center;
                                 }
 
                                 form{
@@ -2805,14 +4890,51 @@ button{
                                     flex-direction: column;
                                     gap: .5rem;
 
+                                    label{
+                                        font-size: .95rem;
+
+                                        @media (min-width: 768px){
+                                            font-size: 1rem;
+                                        }
+
+                                    }
+
+                                    input, select{
+                                        width: 100%;
+                                        font-size: .95rem;
+                                        padding: .6rem .6rem;
+                                        // border: 1px solid #222222a9;
+                                        border: none !important;
+                                        font-weight: 600;
+                                        background-color: #EDEDED;
+
+                                        @media (min-width: 768px){
+                                            font-size: 1rem;
+                                        }
+
+                                        option{
+                                            font-size: .95rem;
+
+                                            @media (min-width: 768px){
+                                                font-size: 1rem;
+                                            }
+                                        }
+                                    }
+
+
                                     .first{
+                                        display: flex;
+                                        flex-direction: column;
+                                        // align-items: flex-start !important;
+                                        gap: .5rem;
+                                        width: 100%;
                                         
                                         @media (min-width: 992px) {
                                             display: flex;
+                                            flex-direction: row;
                                             align-items: flex-end;
                                             gap: 1rem;
-                                            width: 100%;
-                                            
+                                            width: 100%;            
                                         }
 
                                         .order-by{
@@ -2829,7 +4951,6 @@ button{
                                         .contact{
 
                                             label{
-
                                             }
 
                                             input{
@@ -2839,19 +4960,24 @@ button{
                                     }
 
                                     .second{
-
+                                        display: flex;
+                                        flex-direction: column;
+                                        // align-items: flex-start !important;
+                                        gap: .5rem;
+                                        width: 100%;
+                                        
                                         @media (min-width: 992px) {
                                             display: flex;
+                                            flex-direction: row;
                                             align-items: flex-end;
                                             gap: 1rem;
-                                            width: 100%;
-                                            
+                                            width: 100%;            
                                         }
 
                                         .order-by{
 
                                             label{
-
+                                                font-size: .95rem;
                                             }
 
                                             input{
@@ -2862,7 +4988,7 @@ button{
                                         .contact{
 
                                             label{
-
+                                                font-size: .95rem;
                                             }
 
                                             input{
@@ -2906,13 +5032,18 @@ button{
                                     }
 
                                     .fifth{
-
+                                        display: flex;
+                                        flex-direction: column;
+                                        // align-items: flex-start !important;
+                                        gap: .5rem;
+                                        width: 100%;
+                                        
                                         @media (min-width: 992px) {
                                             display: flex;
+                                            flex-direction: row;
                                             align-items: flex-end;
                                             gap: 1rem;
-                                            width: 100%;
-                                            
+                                            width: 100%;            
                                         }
 
                                         .order-by{
@@ -2975,12 +5106,18 @@ button{
                                     }
 
                                     .sixth{
-
+                                        display: flex;
+                                        flex-direction: column;
+                                        // align-items: flex-start !important;
+                                        gap: .5rem;
+                                        width: 100%;
+                                        
                                         @media (min-width: 992px) {
                                             display: flex;
+                                            flex-direction: row;
                                             align-items: flex-end;
                                             gap: 1rem;
-                                            width: 100%;  
+                                            width: 100%;            
                                         }
 
                                         .order-by{
@@ -3023,13 +5160,18 @@ button{
                                     }
 
                                     .seventh{
-
+                                        display: flex;
+                                        flex-direction: column;
+                                        // align-items: flex-start !important;
+                                        gap: .5rem;
+                                        width: 100%;
+                                        
                                         @media (min-width: 992px) {
                                             display: flex;
+                                            flex-direction: row;
                                             align-items: flex-end;
                                             gap: 1rem;
-                                            width: 100%;
-                                            
+                                            width: 100%;            
                                         }
 
                                         .order-by{
@@ -3080,11 +5222,12 @@ button{
                                 p{
                                     padding: 0;
                                     margin: 0;
-
+                                    color: #984640;
                                 }
 
                                 button{
-
+                                    padding: .7rem 4rem;
+                                    font-size: 1.15rem;
                                 }
 
                             }
@@ -3153,24 +5296,28 @@ button{
     .main-container{
 
         header{
+            position: relative;
                         
             .container{
 
                 .row{
 
                     .col{
+                        // position: relative;
                         width: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
                         gap: 1.5rem;
-                        padding: .8rem .5rem;
+                        padding: .8rem .6rem;
 
                         @media (max-width: 767px){
-                            padding: 1rem .5rem;
+                            padding: 1rem .6rem;
                         }
 
                         #hamburger{
+                            position: relative;
+                            z-index: 100;
                             font-size: 1.3rem;
                             padding: 0.15rem 0.45rem;
                             border-radius: 0.3rem;
@@ -3213,11 +5360,48 @@ button{
                                 display: none;
                             }
 
+                            .search{
+                                background-color: #eeeeec;
+                                border-radius: 50px;
+                                padding: .3rem .6rem;
+                                padding-right: 1.6rem;
+                                position: relative;
+                                // width: 28%;
+                                display: none;
+                                
+                                input{
+                                    background: none;
+                                    outline: none;
+                                    border: none;
+                                    padding: .5rem .7rem;
+                                    width: 100%;
+                                    font-size: .95rem;
+
+                                    &::placeholder{
+                                        font-size: .95rem;
+                                    }
+                                }
+            
+                                i{
+                                    position: absolute;
+                                    top: 50%;
+                                    right: .15rem;
+                                    transform: translate(-50%, -50%);
+                                    font-size: 1.3rem;
+            
+                                }
+                            }
+
                             ul{
                                 list-style-type: none;
                                 display: flex;
                                 align-items: center;
                                 gap: 1.5rem;
+
+                                @media (max-width: 767px){
+                                    flex-direction: column;
+                                    gap: .5rem;
+                                }
 
                                 @media (min-width: 992px){
                                     gap: 2.5rem;
@@ -3287,12 +5471,283 @@ button{
             
                             .icon{
                                 display: flex;
+                                position: relative;
+
+                                @media (max-width: 767px){
+                                    margin-right: 1rem;
+                                }
             
                                 i{
                                     font-size: 1.5rem;
+                                    cursor: pointer;
 
                                     @media (max-width: 767px){
                                         font-size: 1.7rem;
+                                    }
+                                }
+
+                                span{
+                                    position: absolute;
+                                    top: -.1rem;
+                                    right: -.8rem;
+                                    padding: .1rem .35rem;
+                                    border-radius: 16px;
+                                    background-color: #222;
+                                    color: #fff;
+                                    font-size: .65rem;
+                                }
+                            }
+
+                            .cart-wrapper{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .main{
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: .7rem;
+                                    margin-top: 5rem;
+
+                                    .icon{
+                                        font-size: 2rem;
+                                        border-radius: 100%;
+                                        background: #F8F8F8;
+                                        padding: 1rem 1.5rem;
+                                        opacity: .7;
+                                    }
+
+                                    .heading{
+
+                                    }
+
+                                    a{
+                                        margin-top: .5rem;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+
+                            .cart-wrapper1{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                z-index: 99;
+                                padding: 1rem;
+                                background: #fff;
+                                width: 30%;
+                                min-height: 100vh;
+                                height: 100%;
+                                display: none;
+
+                                @media (min-width: 300px) and (max-width: 399px){
+                                    width: 100%;
+                                }
+
+                                @media (min-width: 400px) and (max-width: 499px){
+                                    width: 72%;
+                                }
+
+                                @media (min-width: 500px) and (max-width: 599px){
+                                    width: 60%;
+                                }
+
+                                @media (min-width: 600px) and (max-width: 899px){
+                                    width: 50%;
+                                }
+
+                                @media (min-width: 900px) and (max-width: 1199px){
+                                    width: 40%;
+                                }
+
+                                .header{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    border-bottom: 1px solid #2222229d;
+                                    padding: .3rem .5rem;
+                                    padding-bottom: 1.5rem;
+
+                                    @media (max-width: 399px){
+                                        margin-top: 4rem;
+                                    }
+
+                                    .count{
+                                        padding: .1rem .35rem;
+                                        border-radius: 16px;
+                                        background-color: #222;
+                                        color: #fff;
+                                        font-size: .65rem;
+                                    }
+
+                                    .close{
+                                        font-size: 1.4rem;
+                                        opacity: .5;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .add-to-cart-main{
+                                    height: 80% !important;
+                                    overflow-y: scroll;
+                                    
+                                    .add-to-cart{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+                                        // gap: .7rem;
+                                        padding: .7rem 0;
+                                        border-bottom: 1px solid #22222225;
+                                        position: relative;
+
+                                        .content{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 1rem;
+
+                                            .image{
+
+                                                img{
+                                                    width: 4.5rem;
+                                                    height: 4.5rem;
+                                                    object-fit: cover;
+                                                    object-position: center top;
+                                                }
+
+                                            }
+
+                                            .text{
+
+                                                h6{
+                                                    font-size: .9rem;
+                                                    font-weight: 600;
+                                                }
+
+                                                div{
+                                                    border: 1px solid #22222252;
+                                                    border-radius: 20px;
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    padding: .2rem .5rem;
+
+                                                    span{
+                                                        font-size: .85rem;
+                                                    }
+
+                                                    .add, .del{
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .price-main{
+
+                                            span{
+
+                                                i{
+                                                    position: absolute;
+                                                    top: .5rem;
+                                                    right: .5rem;
+                                                    font-size: 1.1rem;
+                                                    opacity: .3;
+                                                    cursor: pointer;
+                                                }
+                                            }
+
+                                            .price{
+                                                font-size: .9rem;
+                                                margin-right: .5rem;
+                                                // font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .footer{
+                                    // position: absolute;
+                                    // bottom: 0 !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    // align-items: center;
+                                    gap: 1rem;
+                                    background: #fff;
+                                    padding: 1rem 0rem;
+                                    width: 100%;
+
+                                    div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        h6{
+                                            font-weight: 500;
+                                        }
+
+                                        span{
+                                            font-weight: 600;
+                                        }
+                                    }
+
+                                    a{
+
                                     }
                                 }
                             }
@@ -3357,7 +5812,7 @@ button{
                     margin-bottom: 4rem;
                     
                     @media (max-width: 767px){
-                        gap: 2rem;
+                        gap: 3rem;
                     }
                     
 
@@ -3380,11 +5835,16 @@ button{
                               .thumbnails {
                                 display: flex;
                                 gap: 10px;
+                                width: 100%;
                               }
                               
                               .thumbnails img {
                                 max-width: 100px;
                                 cursor: pointer;
+                                
+                                @media (max-width: 359px){
+                                    max-width: 60px;  
+                                }
                               }
                               
                               .main-image{
@@ -3396,6 +5856,30 @@ button{
                                     height: 15rem;
                                     max-width: 100%;
                                     object-fit: cover;
+
+                                    @media (max-width: 575px){
+                                        height: 15rem;  
+                                    }
+
+                                    @media (min-width: 576px) and (max-width: 767px){
+                                        height: 17rem;  
+                                    }
+
+                                    @media (min-width: 768px){
+                                        height: 15rem;  
+                                    }
+
+                                    @media (min-width: 992px) and (max-width: 1199px){
+                                        height: 17rem;  
+                                    }
+
+                                    @media (min-width: 1200px) and (max-width: 1399px){
+                                        height: 20rem;  
+                                    }
+
+                                    @media (min-width: 1400px){
+                                        height: 23rem;  
+                                    }
                                 }
                               } 
                               
@@ -3431,60 +5915,127 @@ button{
                             flex-direction: column;
                             gap: 1rem;
                             width: 100%;
+                            // text-align: center;
 
                             h2{
+                                // text-align: center;
+                                padding-bottom: 1rem;
+                                border-bottom: 1px solid #000;
+                                font-size: 1.7rem;
+                                font-weight: 600;
+                                letter-spacing: 5px;
 
+                                @media (min-width: 768px){
+                                    font-size: 1.8rem;
+                                }
                             }
 
                             .info{
 
                                 p{
+                                    font-size: 1rem;
 
+                                    @media (min-width: 768px){
+                                        font-size: 1.05rem;
+                                    }
                                 }
                             }
 
                             .food-items{
 
                                 label{
+                                    font-size: 1.1rem;
 
+                                    @media (min-width: 768px){
+                                        font-size: 1.2rem;
+                                    }
                                 }
 
                                 select{
+                                    padding: .4rem 1.5rem;
+                                    font-size: 1rem;
+
+                                    @media (min-width: 768px){
+                                        font-size: 1.05rem;
+                                    }
 
                                     option{
+                                        font-size: 1rem;
 
+                                        @media (max-width: 767px){
+                                            font-size: .95rem;
+                                        }
                                     }
                                 }
                             }
 
                             .price{
-                             
-                                pre{
+                                
+                                p{
+                                    margin: 0;
+                                    padding: 0;
+                                    font-size: 1.2rem;
 
+                                    @media (max-width: 575px){
+                                        font-size: 1.1rem !important;
+                                    }
+
+                                    @media (min-width: 576px) and (max-width: 767px){
+                                        font-size: 1.15rem !important;
+                                    }
                                 }
                             }
 
                             .customize{
 
                                 label{
+                                    font-size: 1.1rem;
 
+                                    @media (min-width: 768px){
+                                        font-size: 1.2rem;
+                                    }
                                 }
 
                                 input{
+                                    padding: .4rem .5rem;
+                                    font-size: .95rem;
 
+                                    @media (min-width: 768px){
+                                        font-size: 1.05rem;
+                                    }
+                                }
+
+                                p{
+                                    padding: 0;
+                                    margin: 0;
                                 }
                             }
 
                             .add-to-cart{
-
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1.5rem;
+                                
                                 .count{
+                                    width: 35%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    border: 1px solid #222;
+                                    padding: .5rem .8rem;
 
                                     span{
+                                        font-size: 1.15rem;
 
+                                        @media (min-width: 768px){
+                                            font-size: 1.2rem;
+                                        }
                                     }
                                 }
 
                                 button{
+                                    padding: .7rem 2rem;
+                                    border-radius: 30px;
 
                                 }
                             }
@@ -3502,6 +6053,12 @@ button{
                             pre{
                                 margin-bottom: 2rem;
                                 border: none;
+                                line-height: 1.9;
+                                font-size: 1rem;
+
+                                @media (min-width: 768px){
+                                    font-size: 1.1rem;
+                                }                                
                             }
 
                         }
